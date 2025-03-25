@@ -9,49 +9,25 @@ function Form() {
     message: "",
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Convierte la fecha a un formato estándar y remueve caracteres no numéricos del teléfono
-    const formattedData = {
-      ...formData,
-      phone: formData.phone.replace(/\D/g, ""), // Remueve caracteres no numéricos
-      birthYear: formData.birthYear ? new Date(formData.birthYear).toISOString().split("T")[0] : "",
-    };
-
+  
     try {
-      const response = await fetch("https://kodekast-podcast.vercel.app/api/sendEmail", {
+      const response = await fetch("https://formsubmit.co/tu-correo@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formattedData),
+        body: JSON.stringify(formData),
       });
-
-      if (!response.ok) {
-        const errorData = await response.json(); // Obtener más detalles del error
-        throw new Error(errorData.message || "Error desconocido en el servidor");
-      }
-
+  
+      if (!response.ok) throw new Error("Error enviando el formulario");
+  
       alert("✅ Formulario enviado con éxito");
       setFormData({ name: "", email: "", phone: "", birthYear: "", message: "" });
     } catch (error) {
-      console.error("❌ Error enviando el formulario:", error);
-
-      // Diferenciar entre los tipos de errores
-      if (error.message.includes("Failed to fetch")) {
-        alert("🚫 Error de conexión: No se pudo conectar con el servidor. Verifica que la API esté funcionando.");
-      } else if (error.message.includes("CORS")) {
-        alert("⚠️ Error de CORS: El servidor no permite solicitudes desde este origen. Intenta desplegar la API correctamente o ajusta la configuración de CORS.");
-      } else if (error.message.includes("Missing credentials")) {
-        alert("⚠️ Error en las credenciales: Asegúrate de que las credenciales de correo estén configuradas correctamente en el servidor.");
-      } else {
-        alert(`❌ Error enviando formulario: ${error.message}`);
-      }
+      alert(`❌ Error enviando formulario: ${error.message}`);
     }
   };
+  
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-800 text-yellow-500">

@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node index.js",
+  "vercel-build": "vercel build"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
@@ -15,16 +17,16 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
- "devDependencies": {
-  "@eslint/js": "^9.21.0",
-  "@types/react": "^18.0.10",  
-  "@types/react-dom": "^18.0.4", 
-  "@vitejs/plugin-react-swc": "^3.8.0",
-  "eslint": "^9.21.0",
-  "eslint-plugin-react-hooks": "^5.1.0",
-  "eslint-plugin-react-refresh": "^0.4.19",
-  "globals": "^15.15.0",
-  "vite": "^4.3.0"  
-}
-
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^18.0.10",
+    "@types/react-dom": "^18.0.4",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "vercel": "^41.4.1",
+    "vite": "^4.3.0"
+  }
 }
