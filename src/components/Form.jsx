@@ -9,11 +9,15 @@ function Form() {
     message: "",
   });
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
   
     try {
-      const response = await fetch("https://formsubmit.co/tu-correo@gmail.com", {
+      const response = await fetch("https://formsubmit.co/kodekastpodcast@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -27,7 +31,6 @@ function Form() {
       alert(`❌ Error enviando formulario: ${error.message}`);
     }
   };
-  
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-800 text-yellow-500">
@@ -36,6 +39,7 @@ function Form() {
         className="bg-black shadow-md rounded-lg p-8 w-full max-w-md border border-yellow-500"
       >
         <h2 className="text-2xl font-extrabold mb-6 text-center">Registro y Participación</h2>
+        
         <div className="mb-4">
           <label htmlFor="name" className="block font-medium mb-2">
             Nombre
@@ -51,6 +55,7 @@ function Form() {
             className="w-full px-4 py-2 bg-transparent border border-yellow-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-yellow-500"
           />
         </div>
+        
         <div className="mb-4">
           <label htmlFor="email" className="block font-medium mb-2">
             Email
@@ -66,6 +71,7 @@ function Form() {
             className="w-full px-4 py-2 bg-transparent border border-yellow-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-yellow-500"
           />
         </div>
+        
         <div className="mb-4">
           <label htmlFor="phone" className="block font-medium mb-2">
             Teléfono
@@ -81,6 +87,7 @@ function Form() {
             className="w-full px-4 py-2 bg-transparent border border-yellow-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-yellow-500"
           />
         </div>
+        
         <div className="mb-4">
           <label htmlFor="birthYear" className="block font-medium mb-2">
             Año de Nacimiento
@@ -95,6 +102,7 @@ function Form() {
             className="w-full px-4 py-2 bg-transparent border border-yellow-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-yellow-500"
           />
         </div>
+        
         <div className="mb-6">
           <label htmlFor="message" className="block font-medium mb-2">
             Mensaje
@@ -109,6 +117,10 @@ function Form() {
             className="w-full px-4 py-2 bg-transparent border border-yellow-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-yellow-500"
           />
         </div>
+
+      
+        <input type="hidden" name="_captcha" value="false" />
+
         <button
           type="submit"
           className="w-full bg-yellow-500 text-black py-2 px-4 rounded-lg hover:bg-yellow-600 transition duration-300"
