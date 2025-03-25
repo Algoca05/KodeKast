@@ -7,10 +7,15 @@ function Home() {
       </p>
       <div className="bg-yellow-900 p-4 rounded shadow">
         <h2 className="text-2xl font-bold mb-2 text-yellow-500">Episodio Reciente</h2>
-        <audio controls className="w-full">
-          <source src="../../public/episodeo1.m4a" type="audio/mpeg" />
-          Tu navegador no soporta el elemento de audio.
-        </audio>
+        <div className="w-full aspect-video">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/LjWwNU3E1Yg"
+            title="Episodio Reciente"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
       <p className="text-center text-gray-600">
         Explora las demás secciones usando el menú de navegación.
