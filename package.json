@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "node index.js",
-  "vercel-build": "vercel build"
+    "vercel-build": "vite build"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
