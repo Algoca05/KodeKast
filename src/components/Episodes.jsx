@@ -19,7 +19,7 @@ function Episodes() {
       <div className="bg-gray-50 p-6 rounded-lg shadow">
         <h2 className="text-2xl font-bold mb-2">Producción</h2>
         <p className="text-lg text-gray-700">
-          Nuestro proceso de grabación y edición utiliza herramientas como Audacity y FFmpeg, combinadas con métodos modernos para ofrecer la mejor calidad de audio.
+          Los mejores podcast que podras escuchar.
         </p>
       </div>
     </div>
