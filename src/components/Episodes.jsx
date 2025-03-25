@@ -1,6 +1,6 @@
 function Episodes() {
   const episodes = [
-    { id: 1, title: 'Episodio 1: Introducción', src: 'src/assets/episodeo1.m4a' },
+    { id: 1, title: 'Episodio 1: Introducción', src: '../../public/episodeo1.m4a' },
     { id: 2, title: 'Episodio 2: Profundizando', src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' }
   ]
 
