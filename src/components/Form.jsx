@@ -17,7 +17,7 @@ function Form() {
     e.preventDefault();
   
     try {
-      const response = await fetch("https://formsubmit.co/kodekastpodcast@gmail.com", {
+      const response = await fetch("https://formsubmit.co/36e5281967aa784bc6a199ca759ce0db", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
