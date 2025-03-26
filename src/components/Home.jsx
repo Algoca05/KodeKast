@@ -10,7 +10,7 @@ function Home() {
         <div className="w-full aspect-video">
           <iframe
             className="w-full h-full"
-            src="https://www.youtube.com/embed/LjWwNU3E1Yg"
+            src="https://youtu.be/kU7ByvG3jvQ"
             title="Episodio Reciente"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
